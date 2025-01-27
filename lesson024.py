@@ -181,7 +181,7 @@ class SingleLinkedList:
         while end != self.start.link:
             p = self.start
             while p.link != end:
-                q = q.link
+                q = p.link
                 if p.info > q.info:
                     p.info, q.info = q.info, p.info
                 p = p.link
@@ -316,3 +316,4 @@ while True:
     else:
         print("Wrong option")
     print()
+
