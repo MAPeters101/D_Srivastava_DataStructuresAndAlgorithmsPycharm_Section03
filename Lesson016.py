@@ -9,7 +9,16 @@ class SingleLinkedList:
         self.start = None
 
     def display_list(self):
-        pass
+        if self.start is None:
+            print("List is empty")
+            return
+        else:
+            print("List is: ")
+            p = self.start
+            while p is not None:
+                print(p.info, " ", end='')
+                p = p.link
+            print()
 
     def count_nodes(self):
         pass
