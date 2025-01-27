@@ -107,7 +107,24 @@ class SingleLinkedList:
 
 
     def insert_at_position(self, data, k):
-        pass
+        if k == 1:
+            temp = Node(data)
+            temp.link = self.start
+            self.start = temp
+            return
+
+        p = self.start
+        i = 1
+        while i<k-1 and p is not None: # Find a reference to k-1
+            p = p.link
+            i+=1
+
+        if p is None:
+            print("You can insert only upto position",i)
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
 
     def delete_node(self, x):
         pass
