@@ -63,3 +63,26 @@ class SingleLinkedList:
 
     def remove_cycle(self):
         pass
+
+    def insert_cycle(self,x):
+        pass
+
+    def merge2(self,list2):
+        pass
+
+    def _merge2(self,p1,p2):
+        pass
+
+    def merge_sort(self):
+        pass
+
+    def _merge_sort_rec(self,listStart):
+        pass
+
+    def _divide_list(self,p):
+        pass
+
+################################################################################
+
+
+
