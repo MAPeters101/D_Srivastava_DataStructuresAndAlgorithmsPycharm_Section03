@@ -150,7 +150,9 @@ class SingleLinkedList:
 
 
     def delete_first_node(self):
-        pass
+        if self.start is None:
+            return
+        self.start = self.start.link
 
     def delete_last_node(self):
         pass
