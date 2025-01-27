@@ -29,7 +29,17 @@ class SingleLinkedList:
         print("Number of nodes in the list = ", n)
 
     def search(self, x):
-        pass
+        position = 1
+        p = self.start
+        while p is not None:
+            if p.info == x:
+                print(x , " is at position ", position)
+                return True
+            position+=1
+            p = p.link
+        else:
+            print(x, " not found in list")
+            return False
 
     def insert_in_beginning(self, data):
         pass
