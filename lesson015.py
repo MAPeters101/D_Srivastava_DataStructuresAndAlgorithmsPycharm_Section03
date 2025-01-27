@@ -84,5 +84,33 @@ class SingleLinkedList:
 
 ################################################################################
 
+list = SingleLinkedList()
+list.create_list()
+
+while True:
+    print("1. Display list")
+    print("2. Count the number of nodes")
+    print("3. Search for an element")
+    print("4. Insert in empty list/Insert in beginning of the list")
+    print("5. Insert a node at the end of the list")
+    print("6. Insert a node after a specified node")
+    print("7. Insert a node before a specified node")
+    print("8. Insert a node at a given position")
+    print("9. Delete first node")
+    print("10. Delete last node")
+    print("11. Reverse the list")
+    print("13. Bubble sort by exchanging data")
+    print("14. Bubble sort by exchanging links")
+    print("15. MergeSort")
+    print("16. Insert Cycle")
+    print("17. Detect Cycle")
+    print("18. Remove Cycle")
+    print("19. Quit")
+
+    option = int(input("enter your choice: "))
+
+
+
+
 
 
