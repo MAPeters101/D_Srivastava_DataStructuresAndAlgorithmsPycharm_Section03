@@ -66,7 +66,18 @@ class SingleLinkedList:
             self.insert_at_end(data)
 
     def insert_after(self, data, x):
-        pass
+        p = self.start
+        while p is not None:
+            if p.info == x:
+                break
+            p = p.link
+
+        if p is None:
+            print(x, "not present in the list")
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
 
     def insert_before(self, data, x):
         pass
