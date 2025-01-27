@@ -80,7 +80,31 @@ class SingleLinkedList:
             p.link = temp
 
     def insert_before(self, data, x):
-        pass
+        # If list is empty
+        if self.start is None:
+            print("List is empty")
+            return
+        # x is in first node, new node is to be inserted before first node
+        if x == self.start.info:
+            temp = Node(data)
+            temp.link = self.start
+            self.start = temp
+            return
+
+        # Find reference to predecessor of node containing x
+        p = self.start
+        while p.link is not None:
+            if p.link.info == x:
+                break
+            p = p.link
+
+        if p.link is None:
+            print(x, " not present in the list")
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
+
 
     def insert_at_position(self, data, k):
         pass
