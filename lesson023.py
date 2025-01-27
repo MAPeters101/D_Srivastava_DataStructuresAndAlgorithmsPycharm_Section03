@@ -148,7 +148,6 @@ class SingleLinkedList:
         else:
             p.link = p.link.link
 
-
     def delete_first_node(self):
         if self.start is None:
             return
@@ -167,9 +166,15 @@ class SingleLinkedList:
             p = p.link
         p.link = None
 
-
     def reverse_list(self):
-        pass
+        prev = None
+        p = self.start
+        while p is not None:
+            next = p.link
+            p.link = prev
+            prev = p
+            p = next
+        self.start = prev
 
     def bubble_sort_exdata(self):
         pass
