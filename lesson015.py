@@ -109,6 +109,57 @@ while True:
 
     option = int(input("enter your choice: "))
 
+    if option == 1:
+        list.display_list()
+    elif option == 2:
+        list.count_nodes()
+    elif option == 3:
+        data = int(input("Enter the element to be searched: "))
+        list.search(data)
+    elif option == 4:
+        data = int(input("Enter the element to be inserted: "))
+        list.insert_in_beginning(data)
+    elif option == 5:
+        data = int(input("Enter the element to be inserted: "))
+        list.insert_at_end(data)
+    elif option == 6:
+        data = int(input("Enter the element to be inserted: "))
+        x = int(input("Enter the element after which to insert: "))
+        list.insert_after(data,x)
+    elif option == 7:
+        data = int(input("Enter the element to be inserted: "))
+        x = int(input("Enter the element before which to insert: "))
+        list.insert_before(data,x)
+    elif option == 8:
+        data = int(input("Enter the element to be inserted: "))
+        k = int(input("Enter the position at which to insert: "))
+        list.insert_at_position(data, k)
+    elif option == 9:
+        list.delete_first_node()
+    elif option == 10:
+        list.delete_last_node()
+    elif option == 11:
+        data = int(input("Enter the element to be deleted: "))
+        list.delete_node(data)
+    elif option == 12:
+        list.
+    elif option == 13:
+        list.
+    elif option == 14:
+        list.
+    elif option == 15:
+        list.
+    elif option == 16:
+        list.
+    elif option == 17:
+        list.
+    elif option == 18:
+        list.
+    elif option == 19:
+        list.
+
+
+
 
 
 
