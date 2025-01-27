@@ -142,21 +142,28 @@ while True:
         data = int(input("Enter the element to be deleted: "))
         list.delete_node(data)
     elif option == 12:
-        list.
+        list.reverse_list()
     elif option == 13:
-        list.
+        list.bubble_sort_exdata()
     elif option == 14:
-        list.
+        list.bubble_sort_exlinks()
     elif option == 15:
-        list.
+        list.merge_sort()
     elif option == 16:
-        list.
+        data = int(input("Enter the element at which cycle has to be inserted: "))
+        list.insert_cycle()
     elif option == 17:
-        list.
+        if list.has_cycle():
+            print("List has a cycle")
+        else:
+            print("List does not have a cycle")
     elif option == 18:
-        list.
+        list.remove_cycle()
     elif option == 19:
-        list.
+        break
+    else:
+        print("Wrong option")
+    print()
 
 
 
