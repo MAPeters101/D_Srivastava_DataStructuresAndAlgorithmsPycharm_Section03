@@ -20,6 +20,49 @@ class SingleLinkedList:
                 p = p.link
             print()
 
+    def insert_at_end(self, data):
+        temp = Node(data)
+        if self.start is None:
+            self.start = temp
+            return
+
+        p = self.start
+        while p.link is not None:
+            p = p.link
+        p.link = temp
+
+    def create_list(self):
+        n = int(input("Enter the number of nodes: "))
+        if n == 0:
+            return
+        for i in range(n):
+            data = int(input("Enter the element to be inserted: "))
+            self.insert_at_end(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def count_nodes(self):
         p = self.start
         n = 0
@@ -45,25 +88,6 @@ class SingleLinkedList:
         temp = Node(data)
         temp.link = self.start
         self.start = temp
-
-    def insert_at_end(self, data):
-        temp = Node(data)
-        if self.start is None:
-            self.start = temp
-            return
-
-        p = self.start
-        while p.link is not None:
-            p = p.link
-        p.link = temp
-
-    def create_list(self):
-        n = int(input("Enter the number of nodes: "))
-        if n == 0:
-            return
-        for i in range(n):
-            data = int(input("Enter the element to be inserted: "))
-            self.insert_at_end(data)
 
     def insert_after(self, data, x):
         p = self.start
