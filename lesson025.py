@@ -55,6 +55,39 @@ class SingleLinkedList:
         merge_list.start = self._merge1(self.start, list2.start)
         return merge_list
 
+    def _merge1(self, p1, p2):
+        if p1.info <= p2.info:
+            startM = Node(p1.info)
+            p1 = p1.link
+        else:
+            startM = Node(p2.info)
+            p2 = p2.link
+
+        pM = startM
+
+        while p1 is not None and p2 is not None:
+            if p1.info <= p2.info:
+                pM.link = Node(p1.info)
+                p1 = p1.link
+            else:
+                pM.link = Node(p2.info)
+                p2 = p2.link
+            pM = pM.link
+
+        # If second list has finished and elements left in first list
+        while p1 is not None:
+            pM.link = Node(p1.info)
+            p1 = p1.link
+            pM = pM.link
+
+        # If first list has finished and elements left in second list
+        while p2 is not None:
+            pM.link = Node(p2.info)
+            p2 = p2.link
+            pM = pM.link
+
+        return startM
+
 
 
 
