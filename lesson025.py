@@ -119,211 +119,33 @@ class SingleLinkedList:
 
         return startM
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def count_nodes(self):
-        p = self.start
-        n = 0
-        while p is not None:
-            n+=1
-            p=p.link
-        print("Number of nodes in the list = ", n)
-
-    def search(self, x):
-        position = 1
-        p = self.start
-        while p is not None:
-            if p.info == x:
-                print(x , " is at position ", position)
-                return True
-            position+=1
-            p = p.link
-        else:
-            print(x, " not found in list")
-            return False
-
-    def insert_in_beginning(self, data):
-        temp = Node(data)
-        temp.link = self.start
-        self.start = temp
-
-    def insert_after(self, data, x):
-        p = self.start
-        while p is not None:
-            if p.info == x:
-                break
-            p = p.link
-
-        if p is None:
-            print(x, "not present in the list")
-        else:
-            temp = Node(data)
-            temp.link = p.link
-            p.link = temp
-
-    def insert_before(self, data, x):
-        # If list is empty
-        if self.start is None:
-            print("List is empty")
-            return
-        # x is in first node, new node is to be inserted before first node
-        if x == self.start.info:
-            temp = Node(data)
-            temp.link = self.start
-            self.start = temp
-            return
-
-        # Find reference to predecessor of node containing x
-        p = self.start
-        while p.link is not None:
-            if p.link.info == x:
-                break
-            p = p.link
-
-        if p.link is None:
-            print(x, " not present in the list")
-        else:
-            temp = Node(data)
-            temp.link = p.link
-            p.link = temp
-
-
-    def insert_at_position(self, data, k):
-        if k == 1:
-            temp = Node(data)
-            temp.link = self.start
-            self.start = temp
-            return
-
-        p = self.start
-        i = 1
-        while i<k-1 and p is not None: # Find a reference to k-1
-            p = p.link
-            i+=1
-
-        if p is None:
-            print("You can insert only upto position",i)
-        else:
-            temp = Node(data)
-            temp.link = p.link
-            p.link = temp
-
-    def delete_node(self, x):
-        if self.start is None:
-            print("List is empty")
-            return
-
-        # Deletion of first node
-        if self.start.info == x:
-            self.start = self.start.link
-            return
-
-        # Deletion in between or at the end
-        p = self.start
-        while p.link is not None:
-            if p.link.info == x:
-                break
-            p = p.link
-
-        if p.link is None:
-            print("Element ", x, "not in list")
-        else:
-            p.link = p.link.link
-
-    def delete_first_node(self):
-        if self.start is None:
-            return
-        self.start = self.start.link
-
-    def delete_last_node(self):
-        if self.start is None:
-            return
-
-        if self.start.link is None:
-            self.start = None
-            return
-
-        p= self.start
-        while p.link.link is not None:
-            p = p.link
-        p.link = None
-
-    def reverse_list(self):
-        prev = None
-        p = self.start
-        while p is not None:
-            next = p.link
-            p.link = prev
-            prev = p
-            p = next
-        self.start = prev
-
-    def bubble_sort_exlinks(self):
-        end = None
-        while end != self.start.link:
-            r = p = self.start
-            while p.link != end:
-                q = p.link
-                if p.info > q.info:
-                    p.link = q.link
-                    q.link = p
-                    if p != self.start:
-                        r.link = q
-                    else:
-                        self.start = q
-                    p,q = q,p
-                r = p
-                p = p.link
-            end = p
-
-    def has_cycle(self):
-        pass
-
-    def find_cycle(self):
-        pass
-
-    def remove_cycle(self):
-        pass
-
-    def insert_cycle(self, x):
-        pass
-
-    def merge_sort(self):
-        pass
-
-    def _merge_sort_rec(self, listStart):
-        pass
-
-    def _divide_list(self, p):
-        pass
-
-
 ################################################################################
 
-list = SingleLinkedList()
-list.create_list()
+list1 = SingleLinkedList()
+list2 = SingleLinkedList()
 
+list1.create_list()
+list2.create_list()
+
+list1.bubble_sort_exdata()
+list2.bubble_sort_exdata()
+
+print("First List - "); list1.display_list()
+print("Second List - "); list2.display_list()
+
+list3 = list1.merge1(list2)
+print("Merged List - "); list3.display_list()
+print("First List - "); list1.display_list()
+print("Second List - "); list2.display_list()
+
+list3 = list1.merge2(list2)
+print("Merged List - "); list3.display_list()
+print("First List - "); list1.display_list()
+print("Second List - "); list2.display_list()
+
+
+
+'''
 while True:
     print("1. Display list")
     print("2. Count the number of nodes")
@@ -402,3 +224,4 @@ while True:
     else:
         print("Wrong option")
     print()
+'''
