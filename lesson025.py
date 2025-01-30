@@ -39,6 +39,22 @@ class SingleLinkedList:
             data = int(input("Enter the element to be inserted: "))
             self.insert_at_end(data)
 
+    def bubble_sort_exdata(self):
+        end = None
+        while end != self.start.link:
+            p = self.start
+            while p.link != end:
+                q = p.link
+                if p.info > q.info:
+                    p.info, q.info = q.info, p.info
+                p = p.link
+            end = p
+
+    def merge1(self, list2):
+        merge_list = SingleLinkedList()
+        merge_list.start = self._merge1(self.start, list2.start)
+        return merge_list
+
 
 
 
@@ -199,17 +215,6 @@ class SingleLinkedList:
             prev = p
             p = next
         self.start = prev
-
-    def bubble_sort_exdata(self):
-        end = None
-        while end != self.start.link:
-            p = self.start
-            while p.link != end:
-                q = p.link
-                if p.info > q.info:
-                    p.info, q.info = q.info, p.info
-                p = p.link
-            end = p
 
     def bubble_sort_exlinks(self):
         end = None
