@@ -94,8 +94,30 @@ class SingleLinkedList:
         return merge_list
 
     def _merge2(self, p1, p2):
-        pass
+        if p1.info <= p2.info:
+            startM = p1
+            p1 = p1.link
+        else:
+            startM = p2
+            p2 = p2.link
 
+        pM = startM
+        while p1 is not None and p2 is not None:
+            if p1.info <= p2.info:
+                pM.link = p1
+                pM = pM.link
+                p1 = p1.link
+            else:
+                pM.link = p2
+                pM = pM.link
+                p2 = p2.link
+
+        if p1 is None:
+            pM.link = p2
+        else:
+            pM.link = p1
+
+        return startM
 
 
 
