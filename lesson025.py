@@ -88,6 +88,14 @@ class SingleLinkedList:
 
         return startM
 
+    def merge2(self, list2):
+        merge_list = SingleLinkedList()
+        merge_list.start = self._merge2(self.start, list2.start)
+        return merge_list
+
+    def _merge2(self, p1, p2):
+        pass
+
 
 
 
@@ -277,12 +285,6 @@ class SingleLinkedList:
         pass
 
     def insert_cycle(self, x):
-        pass
-
-    def merge2(self, list2):
-        pass
-
-    def _merge2(self, p1, p2):
         pass
 
     def merge_sort(self):
